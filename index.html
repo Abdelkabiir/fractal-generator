@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Generator</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        canvas {
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Fractal Generator</h1>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="fractalType">Type: </label>
+            <select id="fractalType">
+                <option value="mandelbrot">Mandelbrot Set</option>
+                <option value="julia">Julia Set</option>
+                <option value="tree">Fractal Tree</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="iterations">Iterations: </label>
+            <input type="range" id="iterations" min="1" max="100" value="50">
+            <span id="iterationValue">50</span>
+        </div>
+
+        <div class="control-group">
+            <label for="zoom">Zoom: </label>
+            <input type="range" id="zoom" min="1" max="400" value="200">
+            <span id="zoomValue">200</span>
+        </div>
+
+        <button id="generate">Generate</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <canvas id="fractalCanvas" width="800" height="600"></canvas>
+</div>
+
+<script src="./dist/fractal.js"></script>
+</body>
+</html>
